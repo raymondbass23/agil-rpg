@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>agil-rpg — Crear Avatar</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/avatar.css" />
+</head>
+<body class="dark">
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">agil-rpg · Crear Avatar</div>
+      <div class="top-actions">
+        <a class="link" href="index.html">Volver</a>
+        <button id="save-avatar">Guardar</button>
+      </div>
+    </header>
+
+    <main class="avatar-layout">
+      <section class="avatar-preview section" id="avatar-preview"></section>
+      <section class="avatar-controls section">
+        <form id="avatar-form">
+          <label>Nombre: <input id="avatar-name" required /></label>
+          <label>Género:
+            <select id="avatar-gender">
+              <option value="male">Masculino</option>
+              <option value="female">Femenino</option>
+            </select>
+          </label>
+          <label>Raza:
+            <select id="avatar-race"></select>
+          </label>
+          <label>Rol / Personalidad:
+            <select id="avatar-role"></select>
+          </label>
+          <label>Color piel:
+            <select id="avatar-skin"></select>
+          </label>
+          <label>Peinado:
+            <select id="avatar-hair"></select>
+          </label>
+          <div class="form-actions">
+            <button type="submit">Crear / Actualizar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/avatar.js"></script>
+</body>
+</html>

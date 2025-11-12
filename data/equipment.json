@@ -1,0 +1,30 @@
+[
+  {
+    "id": "e_001",
+    "name": "Espada del Alba Silente",
+    "category": "Arma",
+    "tier": "Común",
+    "effect": "Incrementa la precisión (+5%)"
+  },
+  {
+    "id": "e_101",
+    "name": "Coraza del Viajero",
+    "category": "Armadura",
+    "tier": "Común",
+    "effect": "Disminuye fatiga (-8%)"
+  },
+  {
+    "id": "e_201",
+    "name": "Anillo del Viento Libre",
+    "category": "Accesorio",
+    "tier": "Común",
+    "effect": "Mejora movilidad (+5%)"
+  },
+  {
+    "id": "e_701",
+    "name": "Fragmento del Tiempo",
+    "category": "Reliquia",
+    "tier": "Raro",
+    "effect": "Reduce tiempo de misiones (-10%)"
+  }
+]

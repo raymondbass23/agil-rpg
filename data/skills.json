@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "id": "personal",
+      "name": "Personales",
+      "skills": [
+        {
+          "id": "discipline",
+          "name": "Disciplina",
+          "type": "base",
+          "desc": "Constancia para ejecutar tareas"
+        },
+        {
+          "id": "energy",
+          "name": "Energía Vital",
+          "type": "base",
+          "desc": "Resistencia y vigor"
+        },
+        {
+          "id": "health",
+          "name": "Salud Física",
+          "type": "base",
+          "desc": "Cuidado corporal"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Sociales",
+      "skills": [
+        {
+          "id": "communication",
+          "name": "Comunicación",
+          "type": "base",
+          "desc": "Expresar y escuchar"
+        },
+        {
+          "id": "empathy",
+          "name": "Empatía",
+          "type": "base",
+          "desc": "Entender emociones ajenas"
+        }
+      ]
+    },
+    {
+      "id": "powers",
+      "name": "Poderes Místicos",
+      "skills": [
+        {
+          "id": "mana",
+          "name": "Mana",
+          "type": "power",
+          "desc": "Energía creativa"
+        },
+        {
+          "id": "attack",
+          "name": "Ataque",
+          "type": "power",
+          "desc": "Impacto de poderes"
+        }
+      ]
+    }
+  ]
+}

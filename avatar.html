@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>agil-rpg — Avatar</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/avatar.css" />
+</head>
+<body class="dark mobile">
+  <div class="page">
+    <header class="topbar">
+      <button onclick="history.back()" class="icon-btn">←</button>
+      <div class="brand">Crear Avatar</div>
+      <div style="width:40px"></div>
+    </header>
+
+    <main class="avatar-layout panel">
+      <section class="avatar-preview" id="avatar-preview"></section>
+      <section class="avatar-controls">
+        <form id="avatar-form">
+          <label>Nombre: <input id="avatar-name" required /></label>
+          <label>Género:
+            <select id="avatar-gender"><option value="male">Masculino</option><option value="female">Femenino</option></select>
+          </label>
+          <label>Raza:
+            <select id="avatar-race"></select>
+          </label>
+          <label>Rol:
+            <select id="avatar-role"></select>
+          </label>
+          <div class="grid">
+            <label>Color piel<select id="avatar-skin"></select></label>
+            <label>Peinado<select id="avatar-hair"></select></label>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Guardar Avatar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer small">Los datos se guardan localmente</footer>
+  </div>
+
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/ux.js"></script>
+</body>
+</html>

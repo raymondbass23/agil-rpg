@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>agil-rpg — Mobile</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body class="dark mobile">
+  <div id="app">
+    <header class="topbar">
+      <button id="menu-toggle" class="icon-btn">☰</button>
+      <div class="brand">agil-rpg</div>
+      <div style="display:flex;gap:8px">
+        <a class="link" href="avatar.html" title="Editar avatar">👤</a>
+        <button id="btn-save" class="icon-btn" title="Guardar">💾</button>
+      </div>
+    </header>
+
+    <main class="main-area">
+      <section id="dashboard" class="panel">
+        <div class="row head">
+          <div id="avatar-card" class="avatar-card"></div>
+          <div class="curr-wrap">
+            <div class="currency-row"><span>✦</span><b id="coinA">0</b><small>Runas</small></div>
+            <div class="currency-row"><span>◈</span><b id="coinB">0</b><small>Fragmentos</small></div>
+            <div class="currency-row"><span>●</span><b id="coinC">0</b><small>Caprichos</small></div>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button id="btn-new-saga" class="btn primary full">+ Nueva Saga</button>
+          <button id="btn-create" class="btn secondary full">+ Nueva Misión / Consecuencia</button>
+        </div>
+
+        <div id="saga-list" class="saga-list"></div>
+      </section>
+    </main>
+
+    <!-- Bottom sheet / modal for create/edit -->
+    <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+      <div class="modal-header">
+        <strong id="modal-title">Crear</strong>
+        <button id="modal-close" class="icon-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="task-form">
+          <label>Tipo
+            <select id="task-type"><option value="mission">Misión</option><option value="consequence">Consecuencia</option></select>
+          </label>
+          <label>Saga
+            <select id="task-saga"></select>
+          </label>
+          <label>Meta (opcional)
+            <select id="task-meta"><option value="">Sin meta</option></select>
+          </label>
+          <label>Título
+            <input id="task-title" required placeholder="Ej. Lavar los platos" />
+          </label>
+          <label>Descripción
+            <textarea id="task-desc" rows="3" placeholder="Detalles,..."></textarea>
+          </label>
+          <div class="grid">
+            <label>Prioridad
+              <select id="task-priority"><option value="low">Baja</option><option value="med">Media</option><option value="high">Alta</option></select>
+            </label>
+            <label>Fecha límite
+              <input id="task-due" type="date" />
+            </label>
+          </div>
+          <div class="grid smallcols">
+            <label>Runas<input id="task-rew-A" type="number" min="0" value="0" /></label>
+            <label>Fragmentos<input id="task-rew-B" type="number" min="0" value="0" /></label>
+            <label>Caprichos<input id="task-rew-C" type="number" min="0" value="0" /></label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Guardar</button>
+            <button type="button" id="btn-delete" class="btn danger">Eliminar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <nav id="side" class="side hidden">
+      <div class="side-head">Menú</div>
+      <button id="nav-dashboard" class="side-item">Dashboard</button>
+      <button id="nav-inventory" class="side-item">Inventario</button>
+      <button id="nav-skills" class="side-item">Habilidades</button>
+      <button id="nav-settings" class="side-item">Ajustes</button>
+    </nav>
+
+    <div id="panel-content" class="panel-content"></div>
+
+    <footer class="footer small">agil-rpg • mobile-first • localStorage</footer>
+  </div>
+
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/ux.js"></script>
+</body>
+</html>

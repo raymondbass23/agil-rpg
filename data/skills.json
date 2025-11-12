@@ -21,6 +21,18 @@
           "name": "Salud Física",
           "type": "base",
           "desc": "Cuidado corporal"
+        },
+        {
+          "id": "concentration",
+          "name": "Concentración",
+          "type": "base",
+          "desc": "Capacidad de enfoque"
+        },
+        {
+          "id": "autocontrol",
+          "name": "Autocontrol",
+          "type": "advanced",
+          "desc": "Control emocional"
         }
       ]
     },
@@ -39,6 +51,12 @@
           "name": "Empatía",
           "type": "base",
           "desc": "Entender emociones ajenas"
+        },
+        {
+          "id": "charisma",
+          "name": "Carisma",
+          "type": "advanced",
+          "desc": "Magnetismo personal"
         }
       ]
     },
@@ -57,6 +75,18 @@
           "name": "Ataque",
           "type": "power",
           "desc": "Impacto de poderes"
+        },
+        {
+          "id": "defense",
+          "name": "Defensa",
+          "type": "power",
+          "desc": "Resistencia a penalizaciones"
+        },
+        {
+          "id": "luck",
+          "name": "Suerte",
+          "type": "power",
+          "desc": "Probabilidad de eventos positivos"
         }
       ]
     }

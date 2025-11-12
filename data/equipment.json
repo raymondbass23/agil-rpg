@@ -1,30 +1,30 @@
 [
   {
     "id": "e_001",
-    "name": "Espada del Alba Silente",
+    "name": "Espada del Amanecer",
     "category": "Arma",
     "tier": "Común",
-    "effect": "Incrementa la precisión (+5%)"
+    "effect": "+5% Ataque"
   },
   {
     "id": "e_101",
-    "name": "Coraza del Viajero",
+    "name": "Armadura de Cuero Vivo",
     "category": "Armadura",
     "tier": "Común",
-    "effect": "Disminuye fatiga (-8%)"
+    "effect": "-8% Fatiga"
   },
   {
     "id": "e_201",
-    "name": "Anillo del Viento Libre",
+    "name": "Anillo de la Concentración",
     "category": "Accesorio",
     "tier": "Común",
-    "effect": "Mejora movilidad (+5%)"
+    "effect": "+10% Concentración"
   },
   {
     "id": "e_701",
     "name": "Fragmento del Tiempo",
     "category": "Reliquia",
     "tier": "Raro",
-    "effect": "Reduce tiempo de misiones (-10%)"
+    "effect": "-10% Tiempo requerido a tareas diarias"
   }
 ]

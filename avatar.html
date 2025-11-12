@@ -1,50 +1,60 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>agil-rpg — Avatar</title>
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/avatar.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>agil-rpg — Crear Avatar</title>
+<link rel="stylesheet" href="styles/main.css" />
+<link rel="stylesheet" href="styles/avatar.css" />
 </head>
 <body class="dark mobile">
-  <div class="page">
-    <header class="topbar">
-      <button onclick="history.back()" class="icon-btn">←</button>
+  <div class="page panel" role="main">
+    <header class="topbar" role="banner">
+      <button onclick="history.back()" class="icon-btn" aria-label="Volver">←</button>
       <div class="brand">Crear Avatar</div>
       <div style="width:40px"></div>
     </header>
 
-    <main class="avatar-layout panel">
-      <section class="avatar-preview" id="avatar-preview"></section>
-      <section class="avatar-controls">
+    <main class="avatar-layout" id="avatar-main">
+      <section class="avatar-preview panel" id="avatar-preview-region" aria-label="Vista previa del avatar"></section>
+
+      <section class="avatar-controls panel" aria-label="Controles del avatar">
         <form id="avatar-form">
-          <label>Nombre: <input id="avatar-name" required /></label>
-          <label>Género:
-            <select id="avatar-gender"><option value="male">Masculino</option><option value="female">Femenino</option></select>
-          </label>
-          <label>Raza:
-            <select id="avatar-race"></select>
-          </label>
-          <label>Rol:
-            <select id="avatar-role"></select>
-          </label>
+          <label for="avatar-name">Nombre</label>
+          <input id="avatar-name" name="name" type="text" autocomplete="name" required />
+
+          <label for="avatar-gender">Género</label>
+          <select id="avatar-gender" name="gender" aria-label="Género">
+            <option value="male">Masculino</option>
+            <option value="female">Femenino</option>
+          </select>
+
+          <label for="avatar-race">Raza</label>
+          <select id="avatar-race" name="race"></select>
+
+          <label for="avatar-role">Rol / Personalidad</label>
+          <select id="avatar-role" name="role"></select>
+
           <div class="grid">
-            <label>Color piel<select id="avatar-skin"></select></label>
-            <label>Peinado<select id="avatar-hair"></select></label>
+            <label for="avatar-skin">Color piel</label>
+            <select id="avatar-skin" name="skin"></select>
+            <label for="avatar-hair">Peinado</label>
+            <select id="avatar-hair" name="hair"></select>
           </div>
+
           <div class="form-actions">
-            <button class="btn primary" type="submit">Guardar Avatar</button>
+            <button type="submit" class="btn primary">Guardar Avatar</button>
+            <button type="button" id="avatar-reset" class="btn secondary">Reset</button>
           </div>
         </form>
       </section>
     </main>
 
-    <footer class="footer small">Los datos se guardan localmente</footer>
+    <footer class="footer small">Tu avatar se guarda automáticamente</footer>
   </div>
 
-  <script src="scripts/storage.js"></script>
-  <script src="scripts/main.js"></script>
-  <script src="scripts/ux.js"></script>
+<script src="scripts/storage.js"></script>
+<script src="scripts/data-init.js"></script>
+<script src="scripts/avatar-v2.js"></script>
 </body>
 </html>

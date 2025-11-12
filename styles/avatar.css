@@ -1,5 +1,0 @@
-.avatar-layout{display:grid;grid-template-columns:360px 1fr;gap:18px;padding:18px}
-.avatar-preview{display:flex;align-items:center;justify-content:center;min-height:320px}
-.avatar-controls form{display:flex;flex-direction:column;gap:10px}
-.avatar-controls label{color:var(--muted)}
-.avatar-controls input, .avatar-controls select{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)}

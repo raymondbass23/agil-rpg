@@ -1,0 +1,9 @@
+/* components specific */
+.task-card{background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);cursor:grab}
+.task-card.dragging{opacity:0.5}
+.label{display:inline-block;padding:4px 8px;border-radius:999px;font-weight:700;background:rgba(255,255,255,0.03);font-size:12px}
+.small{font-size:13px;color:var(--muted)}
+.form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+.avatar-card{display:flex;gap:12px;align-items:center}
+.avatar-form label{display:block;margin-bottom:8px;color:var(--muted)}
+.avatar-form input, .avatar-form select{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)}

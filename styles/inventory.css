@@ -1,1 +1,1 @@
-#inventory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;}
+.inventory-list{display:flex;flex-direction:column;gap:8px}.inventory-item{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01)}.equip-slots{display:flex;flex-direction:column;gap:8px}.slot{padding:8px;background:rgba(255,255,255,0.01);border-radius:8px}

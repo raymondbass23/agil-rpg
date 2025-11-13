@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>agil-rpg — Ajustes</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body class="dark mobile">
+  <header class="topbar"><button class="back-btn" aria-label="Volver">←</button><div class="brand">Ajustes</div></header>
+  <main class="container">
+    <section class="card">
+      <h2>Ajustes</h2>
+      <label><input id="toggle-tts" type="checkbox" disabled/> Sonidos (omitidos)</label>
+      <label><input id="toggle-dark" type="checkbox" checked/> Modo oscuro</label>
+      <div class="form-actions"><button id="reset-progress" class="btn">Resetear progreso</button></div>
+    </section>
+  </main>
+<script src="scripts/utils.js"></script>
+<script src="scripts/storage.js"></script>
+<script src="scripts/main.js" defer></script>
+</body>
+</html>

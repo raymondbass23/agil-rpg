@@ -1,17 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inventario</title>
-<link rel="stylesheet" href="styles/inventory.css">
-<script src="scripts/inventory.js" defer></script>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>agil-rpg — Inventario</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="styles/inventory.css"/>
 </head>
-<body>
-<header><button onclick="navigate('index.html')">← Volver</button></header>
-<main>
-  <h2>Inventario del Jugador</h2>
-  <div id="inventory-grid"></div>
-</main>
+<body class="dark mobile">
+  <header class="topbar"><button class="back-btn" aria-label="Volver">←</button><div class="brand">Inventario</div></header>
+  <main class="container">
+    <section class="card">
+      <h2>Inventario</h2>
+      <div id="inventory-list" class="inventory-list" role="list"></div>
+    </section>
+    <section class="card">
+      <h3>Equipamiento</h3>
+      <div id="equip-slots" class="equip-slots" role="region" aria-label="Equipamiento del avatar">
+        <div class="slot" data-slot="Arma">Arma: <span class="slot-val">Sin equipo</span></div>
+        <div class="slot" data-slot="Armadura">Armadura: <span class="slot-val">Sin equipo</span></div>
+        <div class="slot" data-slot="Accesorio">Accesorio: <span class="slot-val">Sin equipo</span></div>
+      </div>
+    </section>
+  </main>
+<script src="scripts/utils.js"></script>
+<script src="scripts/storage.js"></script>
+<script src="scripts/inventory.js" defer></script>
+<script src="scripts/main.js" defer></script>
 </body>
 </html>

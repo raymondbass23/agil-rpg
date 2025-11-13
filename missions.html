@@ -1,18 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Misiones</title>
-<link rel="stylesheet" href="styles/missions.css">
-<script src="scripts/missions.js" defer></script>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>agil-rpg — Misiones</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="styles/missions.css"/>
 </head>
-<body>
-<header><button onclick="navigate('index.html')">← Volver</button></header>
-<main id="kanban-board">
-  <div class="column" id="pending"><h3>Pendientes</h3></div>
-  <div class="column" id="in-progress"><h3>En curso</h3></div>
-  <div class="column" id="completed"><h3>Completadas</h3></div>
-</main>
+<body class="dark mobile">
+  <header class="topbar"><button class="back-btn" aria-label="Volver">←</button><div class="brand">Misiones</div></header>
+  <main class="container">
+    <section class="card">
+      <div class="kanban-tabs" role="tablist">
+        <button class="tab" data-state="pending" role="tab" aria-selected="true">Pendiente</button>
+        <button class="tab" data-state="inprogress" role="tab">En curso</button>
+        <button class="tab" data-state="done" role="tab">Completada</button>
+      </div>
+      <div id="kanban-body" class="kanban-body" aria-live="polite"></div>
+      <button id="fab-add-mission" class="fab" aria-label="Agregar misión">＋</button>
+    </section>
+  </main>
+<script src="scripts/utils.js"></script>
+<script src="scripts/storage.js"></script>
+<script src="scripts/missions.js" defer></script>
+<script src="scripts/main.js" defer></script>
 </body>
 </html>

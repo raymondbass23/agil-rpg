@@ -1,26 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agil-RPG</title>
-<link rel="stylesheet" href="styles/main.css">
-<script src="scripts/main.js" defer></script>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>agil-rpg — Inicio</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="styles/layout.css"/>
 </head>
-<body>
-<header>
-  <h1>Agil-RPG</h1>
-  <nav>
-    <button onclick="navigate('avatar.html')">Avatar</button>
-    <button onclick="navigate('missions.html')">Misiones</button>
-    <button onclick="navigate('inventory.html')">Inventario</button>
-  </nav>
-</header>
-<main>
-  <section class="welcome">
-    <h2>Bienvenido al sistema Ágil RPG</h2>
-    <p>Selecciona una sección para comenzar.</p>
-  </section>
-</main>
+<body class="dark mobile">
+  <header class="topbar"><div class="brand">agil-rpg</div></header>
+  <main id="app" class="container">
+    <section class="card">
+      <h1>Bienvenido, <span id="home-name">Protagonista</span></h1>
+      <div class="summary">
+        <div>Nivel: <span id="home-level">1</span></div>
+        <div>XP: <span id="home-xp">0</span></div>
+        <div>Runas: <span id="home-coinA">0</span></div>
+      </div>
+    </section>
+
+    <nav class="bottom-nav" role="navigation" aria-label="Navegación principal">
+      <button class="nav-btn" data-target="avatar.html">Avatar</button>
+      <button class="nav-btn" data-target="missions.html">Misiones</button>
+      <button class="nav-btn" data-target="inventory.html">Inventario</button>
+      <button class="nav-btn" data-target="stats.html">Estadísticas</button>
+      <button class="nav-btn" data-target="settings.html">Ajustes</button>
+    </nav>
+  </main>
+
+<script src="scripts/utils.js"></script>
+<script src="scripts/main.js" defer></script>
 </body>
 </html>

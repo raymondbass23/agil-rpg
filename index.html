@@ -1,111 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>agil-rpg — Dashboard</title>
-<link rel="stylesheet" href="styles/main.css"/>
-<link rel="stylesheet" href="styles/components.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agil-RPG</title>
+<link rel="stylesheet" href="styles/main.css">
+<script src="scripts/main.js" defer></script>
 </head>
-<body class="dark">
-  <header class="topbar">
-    <div class="brand">agil-rpg</div>
-    <nav class="nav">
-      <button id="nav-dashboard" class="nav-btn" data-target="dashboard">Inicio</button>
-      <button id="nav-missions" class="nav-btn" data-target="missions">Misiones</button>
-      <button id="nav-inventory" class="nav-btn" data-target="inventory">Inventario</button>
-      <button id="nav-avatar" class="nav-btn" data-target="avatar">Avatar</button>
-    </nav>
-  </header>
-
-  <main id="app">
-    <section id="dashboard" class="view active">
-      <h2>Resumen</h2>
-      <div class="card">
-        <div id="avatar-summary" class="avatar-summary"></div>
-        <div class="summary-stats">
-          <div>Nivel: <span id="summary-level">1</span></div>
-          <div>XP: <span id="summary-xp">0</span></div>
-          <div>Runas: <span id="summary-coinA">0</span></div>
-          <div>Fragmentos: <span id="summary-coinB">0</span></div>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Acciones rápidas</h3>
-        <div class="grid">
-          <button id="quick-new-saga" class="btn">Nueva Saga</button>
-          <button id="quick-open-missions" class="btn">Ir a Misiones</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="missions" class="view">
-      <h2>Tablero de Misiones</h2>
-      <div id="kanban" class="kanban" aria-label="Tablero de misiones">
-        <div class="column" data-state="pending">
-          <h4>Pendiente</h4>
-          <div class="col-body" id="col-pending" ondragover="event.preventDefault()"></div>
-          <button class="col-add" data-state="pending">+ Añadir</button>
-        </div>
-        <div class="column" data-state="inprogress">
-          <h4>En curso</h4>
-          <div class="col-body" id="col-inprogress" ondragover="event.preventDefault()"></div>
-          <button class="col-add" data-state="inprogress">+ Añadir</button>
-        </div>
-        <div class="column" data-state="done">
-          <h4>Completada</h4>
-          <div class="col-body" id="col-done" ondragover="event.preventDefault()"></div>
-          <button class="col-add" data-state="done">+ Añadir</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="inventory" class="view">
-      <h2>Inventario</h2>
-      <div class="card">
-        <div id="inventory-list" class="inventory-list"></div>
-      </div>
-      <div class="card">
-        <h3>Equipamiento</h3>
-        <div id="equip-slots" class="equip-slots">
-          <div class="slot" data-slot="Arma">Arma: <span class="slot-val">Sin equipo</span></div>
-          <div class="slot" data-slot="Armadura">Armadura: <span class="slot-val">Sin equipo</span></div>
-          <div class="slot" data-slot="Accesorio">Accesorio: <span class="slot-val">Sin equipo</span></div>
-          <div class="slot" data-slot="Reliquia">Reliquia: <span class="slot-val">Sin equipo</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="avatar" class="view">
-      <h2>Avatar</h2>
-      <div class="card avatar-card">
-        <div id="avatar-edit-area"></div>
-        <form id="avatar-form" class="avatar-form">
-          <label>Nombre <input id="av-name" /></label>
-          <label>Género
-            <select id="av-gender">
-              <option value="male">Masculino</option>
-              <option value="female">Femenino</option>
-            </select>
-          </label>
-          <label>Raza <select id="av-race"></select></label>
-          <label>Rol <select id="av-role"></select></label>
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Guardar</button>
-            <button id="btn-reset-avatar" type="button" class="btn">Reset</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">agil-rpg • mobile-first</footer>
-
-<script src="scripts/storage.js"></script>
-<script src="scripts/utils.js"></script>
-<script src="scripts/main.js"></script>
-<script src="scripts/missions.js"></script>
-<script src="scripts/inventory.js"></script>
-<script src="scripts/avatar.js"></script>
+<body>
+<header>
+  <h1>Agil-RPG</h1>
+  <nav>
+    <button onclick="navigate('avatar.html')">Avatar</button>
+    <button onclick="navigate('missions.html')">Misiones</button>
+    <button onclick="navigate('inventory.html')">Inventario</button>
+  </nav>
+</header>
+<main>
+  <section class="welcome">
+    <h2>Bienvenido al sistema Ágil RPG</h2>
+    <p>Selecciona una sección para comenzar.</p>
+  </section>
+</main>
 </body>
 </html>

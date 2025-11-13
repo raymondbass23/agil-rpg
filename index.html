@@ -1,136 +1,111 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>agil-rpg — Dashboard</title>
-<link rel="stylesheet" href="styles/main.css" />
+<link rel="stylesheet" href="styles/main.css"/>
+<link rel="stylesheet" href="styles/components.css"/>
 </head>
-<body class="dark mobile" aria-roledescription="Aplicación de productividad gamificada">
-  <div id="app" class="app-root">
-    <header class="topbar" role="banner">
-      <button id="menu-toggle" class="icon-btn" aria-label="Abrir menú">☰</button>
-      <div class="brand" aria-hidden="true">agil-rpg</div>
-      <div class="top-actions">
-        <button id="btn-edit-avatar" class="icon-btn" aria-label="Editar avatar">👤</button>
-        <button id="btn-save" class="icon-btn" aria-label="Guardar datos">💾</button>
-      </div>
-    </header>
-
-    <main class="main-area" id="main" role="main">
-      <section class="panel quick-row" aria-labelledby="profile-title">
-        <div class="avatar-box" id="avatar-box" role="region" aria-labelledby="profile-title">
-          <div id="avatar-preview" class="avatar-preview" aria-hidden="false"></div>
-          <div id="profile-info" class="profile-info" aria-live="polite">
-            <div id="profile-name" class="profile-name">Protagonista</div>
-            <div class="small" id="profile-meta">Estratega · Humano</div>
-            <div class="small">Nivel <span id="profile-level">1</span></div>
-          </div>
-        </div>
-
-        <div class="currencies" role="group" aria-label="Monedas">
-          <div class="currency" tabindex="0" aria-label="Runas">
-            <span class="sym">✦</span>
-            <div><div class="currency-value" id="coinA">0</div><div class="small">Runas</div></div>
-          </div>
-          <div class="currency" tabindex="0" aria-label="Fragmentos">
-            <span class="sym">◈</span>
-            <div><div class="currency-value" id="coinB">0</div><div class="small">Fragmentos</div></div>
-          </div>
-          <div class="currency" tabindex="0" aria-label="Caprichos">
-            <span class="sym">●</span>
-            <div><div class="currency-value" id="coinC">0</div><div class="small">Caprichos</div></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel stats-panel" aria-labelledby="stats-title">
-        <h2 id="stats-title">Estadísticas</h2>
-        <div id="stats-list" class="stats-list" role="list"></div>
-      </section>
-
-      <section class="panel actions-panel" aria-labelledby="actions-title">
-        <button id="btn-new-saga" class="btn primary full">+ Nueva Saga</button>
-        <button id="btn-create" class="btn secondary full">+ Nueva Misión / Consecuencia</button>
-      </section>
-
-      <section class="panel sagas-panel" aria-labelledby="sagas-title">
-        <h2 id="sagas-title">Sagas y Metas</h2>
-        <div id="saga-list" class="saga-list" role="list"></div>
-      </section>
-    </main>
-
-    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="modal-content">
-        <header class="modal-header">
-          <h3 id="modal-title">Crear Tarea</h3>
-          <button id="modal-close" class="icon-btn" aria-label="Cerrar">✕</button>
-        </header>
-        <div class="modal-body">
-          <form id="task-form">
-            <label for="task-type">Tipo</label>
-            <select id="task-type" name="type" aria-label="Tipo de tarea">
-              <option value="mission">Misión</option>
-              <option value="consequence">Consecuencia</option>
-            </select>
-
-            <label for="task-saga">Saga</label>
-            <select id="task-saga" name="saga" aria-label="Saga"></select>
-
-            <label for="task-meta">Meta (opcional)</label>
-            <select id="task-meta" name="meta" aria-label="Meta">
-              <option value="">Sin meta</option>
-            </select>
-
-            <label for="task-title">Título</label>
-            <input id="task-title" name="title" type="text" required autocomplete="off" />
-
-            <label for="task-desc">Descripción</label>
-            <textarea id="task-desc" name="desc" rows="3"></textarea>
-
-            <div class="grid">
-              <label for="task-priority">Prioridad</label>
-              <select id="task-priority" name="priority">
-                <option value="low">Baja</option>
-                <option value="med">Media</option>
-                <option value="high">Alta</option>
-              </select>
-
-              <label for="task-due">Fecha límite</label>
-              <input id="task-due" name="due" type="date" />
-            </div>
-
-            <div class="grid smallcols" aria-label="Recompensas">
-              <label>Runas <input id="task-rew-A" type="number" min="0" value="0" /></label>
-              <label>Fragmentos <input id="task-rew-B" type="number" min="0" value="0" /></label>
-              <label>Caprichos <input id="task-rew-C" type="number" min="0" value="0" /></label>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn primary">Guardar</button>
-              <button type="button" id="task-cancel" class="btn secondary">Cancelar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <nav id="side" class="side hidden" role="navigation" aria-label="Menú">
-      <div class="side-head">Menú</div>
-      <button id="nav-dashboard" class="side-item">Dashboard</button>
-      <button id="nav-inventory" class="side-item">Inventario</button>
-      <button id="nav-skills" class="side-item">Habilidades</button>
-      <button id="nav-avatar" class="side-item">Editar Avatar</button>
-      <button id="nav-settings" class="side-item">Ajustes</button>
+<body class="dark">
+  <header class="topbar">
+    <div class="brand">agil-rpg</div>
+    <nav class="nav">
+      <button id="nav-dashboard" class="nav-btn" data-target="dashboard">Inicio</button>
+      <button id="nav-missions" class="nav-btn" data-target="missions">Misiones</button>
+      <button id="nav-inventory" class="nav-btn" data-target="inventory">Inventario</button>
+      <button id="nav-avatar" class="nav-btn" data-target="avatar">Avatar</button>
     </nav>
+  </header>
 
-    <div id="panel-content" class="panel-content" role="region" aria-live="polite"></div>
+  <main id="app">
+    <section id="dashboard" class="view active">
+      <h2>Resumen</h2>
+      <div class="card">
+        <div id="avatar-summary" class="avatar-summary"></div>
+        <div class="summary-stats">
+          <div>Nivel: <span id="summary-level">1</span></div>
+          <div>XP: <span id="summary-xp">0</span></div>
+          <div>Runas: <span id="summary-coinA">0</span></div>
+          <div>Fragmentos: <span id="summary-coinB">0</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Acciones rápidas</h3>
+        <div class="grid">
+          <button id="quick-new-saga" class="btn">Nueva Saga</button>
+          <button id="quick-open-missions" class="btn">Ir a Misiones</button>
+        </div>
+      </div>
+    </section>
 
-    <footer class="footer small">agil-rpg • mobile-first • accesible • localStorage</footer>
-  </div>
+    <section id="missions" class="view">
+      <h2>Tablero de Misiones</h2>
+      <div id="kanban" class="kanban" aria-label="Tablero de misiones">
+        <div class="column" data-state="pending">
+          <h4>Pendiente</h4>
+          <div class="col-body" id="col-pending" ondragover="event.preventDefault()"></div>
+          <button class="col-add" data-state="pending">+ Añadir</button>
+        </div>
+        <div class="column" data-state="inprogress">
+          <h4>En curso</h4>
+          <div class="col-body" id="col-inprogress" ondragover="event.preventDefault()"></div>
+          <button class="col-add" data-state="inprogress">+ Añadir</button>
+        </div>
+        <div class="column" data-state="done">
+          <h4>Completada</h4>
+          <div class="col-body" id="col-done" ondragover="event.preventDefault()"></div>
+          <button class="col-add" data-state="done">+ Añadir</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="inventory" class="view">
+      <h2>Inventario</h2>
+      <div class="card">
+        <div id="inventory-list" class="inventory-list"></div>
+      </div>
+      <div class="card">
+        <h3>Equipamiento</h3>
+        <div id="equip-slots" class="equip-slots">
+          <div class="slot" data-slot="Arma">Arma: <span class="slot-val">Sin equipo</span></div>
+          <div class="slot" data-slot="Armadura">Armadura: <span class="slot-val">Sin equipo</span></div>
+          <div class="slot" data-slot="Accesorio">Accesorio: <span class="slot-val">Sin equipo</span></div>
+          <div class="slot" data-slot="Reliquia">Reliquia: <span class="slot-val">Sin equipo</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="avatar" class="view">
+      <h2>Avatar</h2>
+      <div class="card avatar-card">
+        <div id="avatar-edit-area"></div>
+        <form id="avatar-form" class="avatar-form">
+          <label>Nombre <input id="av-name" /></label>
+          <label>Género
+            <select id="av-gender">
+              <option value="male">Masculino</option>
+              <option value="female">Femenino</option>
+            </select>
+          </label>
+          <label>Raza <select id="av-race"></select></label>
+          <label>Rol <select id="av-role"></select></label>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Guardar</button>
+            <button id="btn-reset-avatar" type="button" class="btn">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">agil-rpg • mobile-first</footer>
 
 <script src="scripts/storage.js"></script>
-<script src="scripts/data-init.js"></script>
-<script src="scripts/app-v2.js"></script>
+<script src="scripts/utils.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/missions.js"></script>
+<script src="scripts/inventory.js"></script>
+<script src="scripts/avatar.js"></script>
 </body>
 </html>

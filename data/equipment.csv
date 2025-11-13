@@ -1,0 +1,6 @@
+id,name,category,rarity,tier,attack,defense,effect,description
+2344,Espada de Acero,Arma,Rara,2,25,0,+10% precisión,Forjada con acero puro.
+2345,Escudo de Roble,Escudo,Común,1,0,10,+5% bloqueo,Escudo simple de madera reforzada.
+2346,Capa del Viento,Armadura,Épica,3,0,5,+15% velocidad,Capa ligera que mejora la agilidad.
+2347,Anillo del Conocimiento,Accesorio,Épica,3,0,0,+4 Inteligencia,Un anillo antiguo que potencia la mente.
+2348,Botas del Errante,Accesorio,Raro,2,0,0,+8% Velocidad,Permiten moverse con agilidad.

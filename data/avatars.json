@@ -1,0 +1,16 @@
+{
+  "races": [
+    "Humano",
+    "Elfo",
+    "Enano",
+    "Androide",
+    "Espíritu"
+  ],
+  "roles": [
+    "Estratega",
+    "Guardián",
+    "Viajero",
+    "Sabio",
+    "Forjador"
+  ]
+}

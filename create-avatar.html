@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Crear Avatar - agil-rpg</title>
+<link rel="stylesheet" href="styles/main.css"/>
+<link rel="stylesheet" href="styles/components.css"/>
+</head>
+<body class="dark">
+  <main class="panel">
+    <h1>Crear Avatar</h1>
+    <div id="avatar-preview" style="margin-bottom:12px"></div>
+    <form id="create-avatar-form">
+      <label>Nombre <input id="name" /></label>
+      <label>Género <select id="gender"><option value="male">Masculino</option><option value="female">Femenino</option></select></label>
+      <label>Raza <select id="race"></select></label>
+      <label>Rol <select id="role"></select></label>
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Crear</button>
+      </div>
+    </form>
+  </main>
+<script src="scripts/storage.js"></script>
+<script src="scripts/avatar.js"></script>
+</body>
+</html>

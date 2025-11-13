@@ -1,1 +1,4 @@
-function navigate(page){window.location.href = page;}
+// main.js: navigation wiring and common behaviors
+document.addEventListener('click', function(e){ const btn = e.target.closest && e.target.closest('.nav-btn, .back-btn'); if(!btn) return; if(btn.classList.contains('back-btn')){ e.preventDefault(); window.location.href = 'index.html'; return; } const target = btn.dataset.target; if(target){ e.preventDefault(); window.location.href = target; } });
+// handle tab switching in missions page
+document.addEventListener('DOMContentLoaded', ()=>{ const tabs = document.querySelectorAll('.tab'); tabs.forEach(t=> t.addEventListener('click', ()=>{ tabs.forEach(x=> x.setAttribute('aria-selected','false')); t.setAttribute('aria-selected','true'); const state = t.dataset.state; if(window.renderKanbanForState) window.renderKanbanForState(state); })); });

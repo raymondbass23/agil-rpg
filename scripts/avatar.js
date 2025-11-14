@@ -1,2 +1,30 @@
-// avatar.js
-const races=['Humano','Elfo','Enano','Androide','Espíritu']; const roles=['Estratega','Guardián','Viajero','Sabio']; document.addEventListener('DOMContentLoaded', ()=>{ const raceSel = document.getElementById('av-race'); const roleSel = document.getElementById('av-role'); if(raceSel) races.forEach(r=> raceSel.appendChild(new Option(r,r))); if(roleSel) roles.forEach(r=> roleSel.appendChild(new Option(r,r))); loadPlayer().then(player=>{ window.AGIL_PLAYER = player; const avatar = (player.profile && player.profile.avatar) ? player.profile.avatar : {name:'Protagonista',gender:'male',race:'Humano',role:'Estratega'}; if(document.getElementById('av-name')) document.getElementById('av-name').value = avatar.name; if(document.getElementById('av-gender')) document.getElementById('av-gender').value = avatar.gender || 'male'; if(document.getElementById('av-race')) document.getElementById('av-race').value = avatar.race || 'Humano'; if(document.getElementById('av-role')) document.getElementById('av-role').value = avatar.role || 'Estratega'; renderAvatarPreview(avatar); }); const form = document.getElementById('avatar-form'); if(form) form.addEventListener('submit', (e)=>{ e.preventDefault(); const p = window.AGIL_PLAYER || {acquired:[],equipped:[]}; p.profile = p.profile || {}; p.profile.avatar = { name: document.getElementById('av-name').value, gender: document.getElementById('av-gender').value, race: document.getElementById('av-race').value, role: document.getElementById('av-role').value }; savePlayer(p); notify('Avatar guardado'); setTimeout(()=> window.location.href='index.html',400); }); document.getElementById('reset-avatar')?.addEventListener('click', ()=>{ if(confirm('Resetear avatar?')){ const p = window.AGIL_PLAYER || {acquired:[],equipped:[]}; p.profile = {avatar:{name:'Protagonista',gender:'male',race:'Humano',role:'Estratega'}}; savePlayer(p); window.location.reload(); }}); }); function renderAvatarPreview(av){ const container = document.getElementById('avatar-preview'); if(!container) return; container.innerHTML = '<svg width="88" height="88" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="40" r="22" fill="#ffd8b8"/><path d="M38 36 q22 -26 44 0 q-6 6 -22 6 q-16 0 -22 -6" fill="#2f2f2f"/></svg><div><strong>'+ (av.name||'Protagonista') +'</strong><div class="small">'+ (av.role||'') + ' · ' + (av.race||'') +'</div></div>'; }
+// avatar.js - manage avatar form in persona page
+document.addEventListener('DOMContentLoaded', ()=>{
+  const races = ['Humano','Elfo','Enano','Androide','Espíritu'];
+  const raceSel = document.getElementById('av-race');
+  if(raceSel) races.forEach(r=> raceSel.appendChild(new Option(r,r)));
+  loadPlayer().then(p=>{
+    window.AGIL_PLAYER = p;
+    const av = p.profile?.avatar || {name:'Protagonista',gender:'male',race:'Humano',role:'Estratega'};
+    el('av-name') && (el('av-name').value = av.name);
+    el('av-gender') && (el('av-gender').value = av.gender || 'male');
+    el('av-role') && (el('av-role').value = av.role || '');
+    el('av-race') && (el('av-race').value = av.race || 'Humano');
+  });
+
+  document.getElementById('save-avatar')?.addEventListener('click', ()=>{
+    loadPlayer().then(p=>{
+      p.profile = p.profile || {};
+      p.profile.avatar = { name: el('av-name').value || 'Protagonista', gender: el('av-gender').value, role: el('av-role').value, race: el('av-race').value };
+      savePlayer(p); window.AGIL_PLAYER = p; notify('Avatar guardado');
+    });
+  });
+
+  document.getElementById('reset-avatar')?.addEventListener('click', ()=>{
+    if(!confirm('Resetear avatar?')) return;
+    loadPlayer().then(p=>{
+      p.profile = { avatar: { name:'Protagonista', gender:'male', role:'Estratega', race:'Humano' } };
+      savePlayer(p); window.AGIL_PLAYER = p; location.reload();
+    });
+  });
+});

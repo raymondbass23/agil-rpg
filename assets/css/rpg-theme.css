@@ -1,0 +1,22 @@
+/* rpg-theme.css - neon panel styles inspired by provided image */
+.rpg-bg{background:linear-gradient(180deg,#06060a 0%, #0b0b10 100%);min-height:100vh}
+.rpg-panel{background:rgba(255,255,255,0.02);border:1px solid rgba(138,46,255,0.18);padding:12px;border-radius:12px;box-shadow:0 0 18px rgba(138,46,255,0.06)}
+.status-header{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.level-box{font-weight:800;font-size:20px;color:var(--accent);text-shadow:0 0 8px rgba(138,46,255,0.2)}
+.title-box .muted{color:var(--muted);font-size:13px}
+.resources .res-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.res-label{width:48px;font-weight:700}
+.bar{flex:1;height:12px;background:rgba(255,255,255,0.03);border-radius:8px;overflow:hidden;position:relative;border:1px solid rgba(0,0,0,0.2)}
+.bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 0 10px rgba(138,46,255,0.12);transition:width 600ms ease}
+.bar-fill.mp{background:linear-gradient(90deg,#3b8bff,#7ee0d6)}
+.bar-fill.fatigue{background:linear-gradient(90deg,#ffaa2e,#ffd27a)}
+.res-value{width:72px;text-align:right;font-weight:700}
+.attr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+.attr-box{background:rgba(255,255,255,0.01);padding:10px;border-radius:8px;display:flex;justify-content:space-between;align-items:center}
+.attr-name{font-weight:700}
+.attr-bonus{color:#4fe08e;font-weight:700;margin-left:8px}
+.points-box{text-align:center;margin-top:12px;font-weight:700}
+.inventory-list{display:flex;flex-direction:column;gap:8px}
+.inventory-item{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01)}
+.equip-slots{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+@media(min-width:900px){ .attr-grid{grid-template-columns:repeat(3,1fr)} .resources .res-row{gap:12px} }

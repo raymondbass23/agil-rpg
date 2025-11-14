@@ -1,22 +1,25 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>agil-rpg — Ajustes</title>
-  <link rel="stylesheet" href="styles/main.css"/>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ajustes — agil-rpg</title>
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/rpg-theme.css">
 </head>
-<body class="dark mobile">
-  <header class="topbar"><button class="back-btn" aria-label="Volver">←</button><div class="brand">Ajustes</div></header>
-  <main class="container">
-    <section class="card">
-      <h2>Ajustes</h2>
-      <label><input id="toggle-tts" type="checkbox" disabled/> Sonidos (omitidos)</label>
-      <label><input id="toggle-dark" type="checkbox" checked/> Modo oscuro</label>
-      <div class="form-actions"><button id="reset-progress" class="btn">Resetear progreso</button></div>
-    </section>
-  </main>
+<body class="rpg-bg">
+<header class="topbar"><a class="back-btn" href="index.html" aria-label="Volver">←</a><div class="brand">Ajustes</div></header>
+<main class="container">
+  <div class="card">
+    <h2>Ajustes del sistema</h2>
+    <label><input id="toggle-theme" type="checkbox"> Modo claro</label>
+    <div class="form-actions" style="margin-top:12px;">
+      <button id="reset-all" class="btn">Resetear progreso (factory reset)</button>
+      <button id="export-json" class="btn">Exportar progreso</button>
+      <label for="import-file" class="btn">Importar progreso<input id="import-file" type="file" accept=".json" style="display:none"></label>
+    </div>
+  </div>
+</main>
 <script src="scripts/utils.js"></script>
 <script src="scripts/storage.js"></script>
-<script src="scripts/main.js" defer></script>
+<script src="scripts/settings.js"></script>
 </body>
 </html>

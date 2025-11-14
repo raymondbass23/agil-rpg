@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Personaje — agil-rpg</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/rpg-theme.css">
+</head>
+<body class="rpg-bg" data-theme="dark">
+  <header class="topbar">
+    <a class="back-btn" href="index.html" aria-label="Volver a inicio">←</a>
+    <div class="brand">Personaje</div>
+  </header>
+
+  <main class="container" role="main">
+    <nav class="tabbar" role="tablist" aria-label="Pestañas del personaje">
+      <button class="tabbtn" role="tab" aria-selected="true" data-tab="tab-stats">Estadísticas</button>
+      <button class="tabbtn" role="tab" aria-selected="false" data-tab="tab-avatar">Avatar</button>
+      <button class="tabbtn" role="tab" aria-selected="false" data-tab="tab-inventory">Inventario</button>
+    </nav>
+
+    <section id="tab-stats" class="tabpanel active" role="tabpanel" aria-labelledby="Estadísticas">
+      <!-- Stats panel close to your reference -->
+      <div class="rpg-panel" aria-label="Panel de estadísticas">
+        <div class="status-header">
+          <div class="level-box" aria-hidden="true">LV <span id="stat-level">1</span></div>
+          <div class="title-box">
+            <div id="stat-job">Aventurero</div>
+            <div id="stat-title" class="muted small">Sin título</div>
+          </div>
+        </div>
+
+        <div class="resources" role="group" aria-label="Recursos">
+          <div class="res-row">
+            <label for="hp-fill" class="res-label">HP</label>
+            <div class="bar" id="hp-bar" aria-hidden="true"><div id="hp-fill" class="bar-fill"></div></div>
+            <div class="res-value" id="hp-text">0 / 0</div>
+          </div>
+          <div class="res-row">
+            <label for="mp-fill" class="res-label">MP</label>
+            <div class="bar" id="mp-bar" aria-hidden="true"><div id="mp-fill" class="bar-fill mp"></div></div>
+            <div class="res-value" id="mp-text">0 / 0</div>
+          </div>
+          <div class="res-row">
+            <label for="fatigue-fill" class="res-label">Fatiga</label>
+            <div class="bar" id="fatigue-bar" aria-hidden="true"><div id="fatigue-fill" class="bar-fill fatigue"></div></div>
+            <div class="res-value" id="fatigue-text">0%</div>
+          </div>
+        </div>
+
+        <div class="attr-grid" role="list" aria-label="Atributos">
+          <!-- attributes will be rendered dynamically -->
+        </div>
+
+        <div class="points-box">
+          Puntos disponibles: <strong id="available-points">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-avatar" class="tabpanel" role="tabpanel" aria-hidden="true">
+      <div class="card">
+        <h2>Avatar</h2>
+        <div class="avatar-flex">
+          <div class="avatar-portrait" aria-hidden="true">
+            <!-- placeholder svg avatar -->
+            <svg width="96" height="96" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar"><circle cx="60" cy="36" r="24" fill="#ffd8b8"/><path d="M36 36 q24 -26 48 0" fill="#2f2f2f"/></svg>
+          </div>
+          <div class="avatar-info">
+            <label>Nombre <input id="av-name" /></label>
+            <label>Género <select id="av-gender"><option value="male">Masculino</option><option value="female">Femenino</option></select></label>
+            <label>Rol <input id="av-role" /></label>
+            <label>Raza <select id="av-race"></select></label>
+            <div class="form-actions">
+              <button id="save-avatar" class="btn primary">Guardar</button>
+              <button id="reset-avatar" class="btn">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-inventory" class="tabpanel" role="tabpanel" aria-hidden="true">
+      <div class="card">
+        <h2>Inventario</h2>
+        <div id="inventory-list" class="inventory-list" role="list"></div>
+        <h3>Equipamiento</h3>
+        <div id="equip-slots" class="equip-slots" role="region" aria-label="Equipamiento del avatar">
+          <div class="slot" data-slot="Arma">Arma: <span class="slot-val">Sin equipo</span></div>
+          <div class="slot" data-slot="Armadura">Armadura: <span class="slot-val">Sin equipo</span></div>
+          <div class="slot" data-slot="Accesorio">Accesorio: <span class="slot-val">Sin equipo</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">agil-rpg • Personaje</footer>
+
+<script src="scripts/utils.js"></script>
+<script src="scripts/storage.js"></script>
+<script src="scripts/tabs.js"></script>
+<script src="scripts/avatar.js"></script>
+<script src="scripts/stats.js"></script>
+<script src="scripts/inventory.js"></script>
+</body>
+</html>

@@ -1,27 +1,28 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>agil-rpg — Misiones</title>
-  <link rel="stylesheet" href="styles/main.css"/>
-  <link rel="stylesheet" href="styles/missions.css"/>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Misiones — agil-rpg</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/rpg-theme.css">
 </head>
-<body class="dark mobile">
-  <header class="topbar"><button class="back-btn" aria-label="Volver">←</button><div class="brand">Misiones</div></header>
+<body class="rpg-bg">
+  <header class="topbar"><a class="back-btn" href="index.html" aria-label="Volver">←</a><div class="brand">Misiones</div></header>
   <main class="container">
-    <section class="card">
-      <div class="kanban-tabs" role="tablist">
-        <button class="tab" data-state="pending" role="tab" aria-selected="true">Pendiente</button>
-        <button class="tab" data-state="inprogress" role="tab">En curso</button>
-        <button class="tab" data-state="done" role="tab">Completada</button>
+    <div class="card">
+      <div class="kanban-tabs" role="tablist" aria-label="Estados de misiones">
+        <button class="tab small" data-state="pending" aria-selected="true">Pendiente</button>
+        <button class="tab small" data-state="inprogress">En curso</button>
+        <button class="tab small" data-state="done">Completadas</button>
       </div>
       <div id="kanban-body" class="kanban-body" aria-live="polite"></div>
       <button id="fab-add-mission" class="fab" aria-label="Agregar misión">＋</button>
-    </section>
+    </div>
   </main>
+
 <script src="scripts/utils.js"></script>
 <script src="scripts/storage.js"></script>
-<script src="scripts/missions.js" defer></script>
-<script src="scripts/main.js" defer></script>
+<script src="scripts/missions.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>

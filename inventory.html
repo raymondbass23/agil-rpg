@@ -1,30 +1,20 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>agil-rpg — Inventario</title>
-  <link rel="stylesheet" href="styles/main.css"/>
-  <link rel="stylesheet" href="styles/inventory.css"/>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inventario — agil-rpg</title>
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/rpg-theme.css">
 </head>
-<body class="dark mobile">
-  <header class="topbar"><button class="back-btn" aria-label="Volver">←</button><div class="brand">Inventario</div></header>
-  <main class="container">
-    <section class="card">
-      <h2>Inventario</h2>
-      <div id="inventory-list" class="inventory-list" role="list"></div>
-    </section>
-    <section class="card">
-      <h3>Equipamiento</h3>
-      <div id="equip-slots" class="equip-slots" role="region" aria-label="Equipamiento del avatar">
-        <div class="slot" data-slot="Arma">Arma: <span class="slot-val">Sin equipo</span></div>
-        <div class="slot" data-slot="Armadura">Armadura: <span class="slot-val">Sin equipo</span></div>
-        <div class="slot" data-slot="Accesorio">Accesorio: <span class="slot-val">Sin equipo</span></div>
-      </div>
-    </section>
-  </main>
+<body class="rpg-bg">
+<header class="topbar"><a class="back-btn" href="index.html" aria-label="Volver">←</a><div class="brand">Inventario</div></header>
+<main class="container">
+  <div class="card">
+    <h2>Inventario</h2>
+    <div id="inventory-list-full" class="inventory-list"></div>
+  </div>
+</main>
 <script src="scripts/utils.js"></script>
 <script src="scripts/storage.js"></script>
-<script src="scripts/inventory.js" defer></script>
-<script src="scripts/main.js" defer></script>
+<script src="scripts/inventory.js"></script>
 </body>
 </html>

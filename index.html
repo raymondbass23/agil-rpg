@@ -1,33 +1,44 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>agil-rpg — Inicio</title>
-  <link rel="stylesheet" href="styles/main.css"/>
-  <link rel="stylesheet" href="styles/layout.css"/>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/rpg-theme.css">
 </head>
-<body class="dark mobile">
-  <header class="topbar"><div class="brand">agil-rpg</div></header>
-  <main id="app" class="container">
-    <section class="card">
-      <h1>Bienvenido, <span id="home-name">Protagonista</span></h1>
-      <div class="summary">
-        <div>Nivel: <span id="home-level">1</span></div>
-        <div>XP: <span id="home-xp">0</span></div>
-        <div>Runas: <span id="home-coinA">0</span></div>
+<body class="rpg-bg" data-theme="dark">
+  <header class="topbar" role="banner">
+    <div class="brand" aria-hidden="true">agil‑rpg</div>
+    <h1 class="visually-hidden">Agil RPG — Panel principal</h1>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="card" aria-labelledby="welcome-title">
+      <h2 id="welcome-title">Bienvenido</h2>
+      <p id="welcome-desc">Sistema de gestión personal gamificado — inspirado en RPG.</p>
+      <div class="quick-grid" role="navigation" aria-label="Accesos rápidos">
+        <a class="tile" href="persona.html">Personaje</a>
+        <a class="tile" href="missions.html">Misiones</a>
+        <a class="tile" href="inventory.html">Inventario</a>
+        <a class="tile" href="settings.html">Ajustes</a>
       </div>
     </section>
 
-    <nav class="bottom-nav" role="navigation" aria-label="Navegación principal">
-      <button class="nav-btn" data-target="avatar.html">Avatar</button>
-      <button class="nav-btn" data-target="missions.html">Misiones</button>
-      <button class="nav-btn" data-target="inventory.html">Inventario</button>
-      <button class="nav-btn" data-target="stats.html">Estadísticas</button>
-      <button class="nav-btn" data-target="settings.html">Ajustes</button>
-    </nav>
+    <section class="card" aria-labelledby="summary-title">
+      <h3 id="summary-title">Resumen rápido</h3>
+      <div id="summary" class="summary">
+        <div>Nombre: <strong id="sum-name">—</strong></div>
+        <div>Nivel: <strong id="sum-level">1</strong></div>
+        <div>Runas: <strong id="sum-coinA">0</strong></div>
+      </div>
+    </section>
   </main>
 
+  <footer class="footer" role="contentinfo">agil-rpg • Mobile first • Tema: <span id="theme-label">Oscuro</span></footer>
+
 <script src="scripts/utils.js"></script>
-<script src="scripts/main.js" defer></script>
+<script src="scripts/storage.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>

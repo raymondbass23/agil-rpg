@@ -7,6 +7,36 @@
       "race": "Humano",
       "role": "Estratega",
       "gender": "male"
-    }
+    },
+    "job": "Aventurero"
+  },
+  "stats": {
+    "str": 5,
+    "agi": 5,
+    "int": 5,
+    "vit": 5,
+    "per": 5
+  },
+  "bonus": {
+    "str": 0,
+    "agi": 0,
+    "int": 0,
+    "vit": 0,
+    "per": 0
+  },
+  "available_points": 0,
+  "level": 1,
+  "hp": {
+    "current": 50,
+    "max": 50
+  },
+  "mp": {
+    "current": 30,
+    "max": 30
+  },
+  "fatigue": 0,
+  "coins": {
+    "A": 0,
+    "B": 0
   }
 }

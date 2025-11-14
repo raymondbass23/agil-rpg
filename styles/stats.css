@@ -1,1 +1,0 @@
-.stat-row{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01);margin-bottom:8px}.stat-bar{height:10px;background:rgba(255,255,255,0.03);border-radius:6px;overflow:hidden}.stat-fill{height:100%;background:linear-gradient(90deg,var(--accent),#7ee0d6);width:0%}

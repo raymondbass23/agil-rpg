@@ -1,0 +1,23 @@
+/* main.css - dashboard focused updates (mobile-first) */
+:root{--bg:#071019;--panel:#0b1220;--muted:#9aa6b2;--accent:#8a2eff;--text:#e6eef8}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.3}
+.topbar{height:56px;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.brand-name{font-weight:800;color:var(--accent);font-size:18px}
+.container{padding:12px;margin-bottom:80px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:12px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.03)}
+.hero-row{display:flex;gap:12px;align-items:center}
+.avatar-compact{width:56px;height:56px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center}
+.hero-name{font-weight:800}
+.muted{color:var(--muted);font-size:13px}
+.small{font-size:13px}
+.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+.tile{display:block;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center;color:var(--text);text-decoration:none;font-weight:700}
+.equip-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.equip-item{min-width:120px;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01);display:flex;flex-direction:column;align-items:flex-start}
+.btn{padding:10px 12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#7ee0d6);color:#041722;font-weight:700;display:inline-block;text-decoration:none}
+.btn.small{padding:8px 10px;font-size:13px}
+.footer{padding:10px;text-align:center;color:var(--muted);font-size:13px;position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.12)}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+@media(min-width:900px){ .container{max-width:980px;margin:0 auto} .quick-grid{grid-template-columns:repeat(4,1fr)} }

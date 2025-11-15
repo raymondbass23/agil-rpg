@@ -9,36 +9,63 @@
 </head>
 <body class="rpg-bg" data-theme="dark">
   <header class="topbar" role="banner">
-    <div class="brand" aria-hidden="true">agil‑rpg</div>
-    <h1 class="visually-hidden">Agil RPG — Panel principal</h1>
+    <a class="brand" href="persona.html" aria-label="Ir al personaje">
+      <span class="brand-name">agil‑rpg</span>
+    </a>
+    <div class="top-meta" aria-hidden="true">
+      <div class="top-level">LV <span id="dash-level">1</span></div>
+      <button id="open-settings" class="btn" aria-label="Abrir ajustes">⚙</button>
+    </div>
   </header>
 
-  <main id="main" class="container" role="main">
+  <main class="container" role="main" aria-labelledby="welcome-title">
     <section class="card" aria-labelledby="welcome-title">
-      <h2 id="welcome-title">Bienvenido</h2>
-      <p id="welcome-desc">Sistema de gestión personal gamificado — inspirado en RPG.</p>
-      <div class="quick-grid" role="navigation" aria-label="Accesos rápidos">
-        <a class="tile" href="persona.html">Personaje</a>
-        <a class="tile" href="missions.html">Misiones</a>
-        <a class="tile" href="inventory.html">Inventario</a>
-        <a class="tile" href="settings.html">Ajustes</a>
+      <h2 id="welcome-title">Panel</h2>
+      <p id="welcome-desc">Resumen rápido — tu hub de productividad gamificado.</p>
+
+      <div class="hero-row" role="region" aria-label="Resumen del personaje">
+        <div class="avatar-compact" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="36" r="22" fill="#ffd8b8"/><path d="M38 36 q22 -26 44 0" fill="#2f2f2f"/></svg>
+        </div>
+        <div class="hero-info">
+          <div class="hero-name" id="dash-name">Protagonista</div>
+          <div class="hero-sub muted" id="dash-role">Aventurero · Humano</div>
+          <div class="hero-stats small" id="dash-mini-stats">STR 5 · AGI 5 · INT 5</div>
+        </div>
+      </div>
+
+      <nav class="quick-grid" role="navigation" aria-label="Accesos rápidos">
+        <a class="tile" href="persona.html" id="tile-persona" aria-label="Personaje">Personaje</a>
+        <a class="tile" href="missions.html" id="tile-missions" aria-label="Misiones">Misiones</a>
+        <a class="tile" href="inventory.html" id="tile-inventory" aria-label="Inventario">Inventario</a>
+        <a class="tile" href="settings.html" id="tile-settings" aria-label="Ajustes">Ajustes</a>
+      </nav>
+    </section>
+
+    <section class="card" aria-labelledby="tasks-title">
+      <h3 id="tasks-title">Misiones en progreso</h3>
+      <div id="dash-missions" role="list" aria-live="polite">
+      </div>
+      <a class="btn small" href="missions.html" id="see-all-missions">Ver tablero completo</a>
+    </section>
+
+    <section class="card" aria-labelledby="equip-title">
+      <h3 id="equip-title">Equipamiento activo</h3>
+      <div id="dash-equip" class="equip-row" role="list">
       </div>
     </section>
 
-    <section class="card" aria-labelledby="summary-title">
-      <h3 id="summary-title">Resumen rápido</h3>
-      <div id="summary" class="summary">
-        <div>Nombre: <strong id="sum-name">—</strong></div>
-        <div>Nivel: <strong id="sum-level">1</strong></div>
-        <div>Runas: <strong id="sum-coinA">0</strong></div>
-      </div>
+    <section class="card" aria-labelledby="notify-title">
+      <h3 id="notify-title">Notificaciones</h3>
+      <ul id="dash-notifications" class="small" role="list">
+      </ul>
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">agil-rpg • Mobile first • Tema: <span id="theme-label">Oscuro</span></footer>
+  <footer class="footer" role="contentinfo">agil-rpg • versión 1 • Mobile‑first</footer>
 
 <script src="scripts/utils.js"></script>
 <script src="scripts/storage.js"></script>
-<script src="scripts/main.js"></script>
+<script src="scripts/dashboard.js"></script>
 </body>
 </html>
